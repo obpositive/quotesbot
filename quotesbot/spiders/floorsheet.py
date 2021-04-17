@@ -20,7 +20,7 @@ class BootstrapTableSpider(scrapy.Spider):
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
  
-def parse(self, response):
+     def parse(self, response):
 	for row in response.xpath('//*[@class="table my-table"]//tr'):
 		 yield {
 			'S.N' : row.xpath('td[1]//text()').extract_first(),
