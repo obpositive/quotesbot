@@ -34,8 +34,8 @@ class BootstrapTableSpider(scrapy.Spider):
             yield scrapy.Request(url=url, callback=self.parse)
  
      def parse(self, response):
-        for row in response.xpath('//*[@class="table my-table"]//tr'):
-            yield {
+         for row in response.xpath('//*[@class="table my-table"]//tr'):
+             yield {
                 'S.N' : row.xpath('td[1]//text()').extract_first(),
                 'Contract No': row.xpath('td[2]//text()').extract_first(),
                 'Stock Symbol' : row.xpath('td[3]//text()').extract_first(),
@@ -44,7 +44,7 @@ class BootstrapTableSpider(scrapy.Spider):
 		'Quantity' : row.xpath('td[6]//text()').extract_first(),
 		'Rate' : row.xpath('td[7]//text()').extract_first(),
 		'Amount' : row.xpath('td[8]//text()').extract_first(),
-            }
+                 }
     # def parse(self, response):
         # page = response.url.split("/")[-2]
         # filename = 'floorsheet.html' % page
