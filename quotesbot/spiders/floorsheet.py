@@ -7,15 +7,6 @@ class BootstrapTableSpider(scrapy.Spider):
  
     def start_requests(self):
         urls = [
-                        # "http://nepalstock.com/main/floorsheet/index/1/?contract-no=&stock-symbol=&buyer=&seller=&_limit=20000"
-			#"http://www.nepalstock.com.np/floorsheet?contract-no=&stock-symbol=&buyer=&seller=&_limit=20000"
-			#"http://nepalstock.com/main/floorsheet/index/1/contract-no/asc/?contract-no=&stock-symbol=&buyer=&seller=&_limit=50000"
-			#"http://nepalstock.com.np/main/floorsheet/index/1/?contract-no=&stock-symbol=&buyer=&seller=&_limit=30000" 
-			#"http://nepalstock.com.np/main/floorsheet/index/2/?contract-no=&stock-symbol=&buyer=&seller=&_limit=30000" ,
-			#"http://nepalstock.com.np/main/floorsheet/index/3/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000",
-			#"http://nepalstock.com.np/main/floorsheet/index/4/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000"
-			#"http://nepalstock.com.np/main/floorsheet/index/5/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000",
-			#"http://nepalstock.com.np/main/floorsheet/index/1/?contract-no=&stock-symbol=&buyer=&seller=&_limit=20000",
 			"http://nepalstock.com/main/floorsheet/index/1/?contract-no=&stock-symbol=&buyer=&seller=&_limit=30000",
 			"http://nepalstock.com/main/floorsheet/index/4/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000",
 			"http://nepalstock.com/main/floorsheet/index/5/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000",
@@ -25,17 +16,13 @@ class BootstrapTableSpider(scrapy.Spider):
 			"http://nepalstock.com/main/floorsheet/index/9/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000",
 			"http://nepalstock.com/main/floorsheet/index/10/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000"
 			
-			
-			
-
-			
-        ]
+                ]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
  
-	def parse(self, response):
-		for row in response.xpath('//*[@class="table my-table"]//tr'):
-		    yield {
+def parse(self, response):
+	for row in response.xpath('//*[@class="table my-table"]//tr'):
+		 yield {
 			'S.N' : row.xpath('td[1]//text()').extract_first(),
 			'Contract No': row.xpath('td[2]//text()').extract_first(),
 			'Stock Symbol' : row.xpath('td[3]//text()').extract_first(),
@@ -44,5 +31,5 @@ class BootstrapTableSpider(scrapy.Spider):
 			'Quantity' : row.xpath('td[6]//text()').extract_first(),
 			'Rate' : row.xpath('td[7]//text()').extract_first(),
 			'Amount' : row.xpath('td[8]//text()').extract_first(),
-		    }
+		       }
  
