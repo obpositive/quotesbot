@@ -39,10 +39,10 @@ class BootstrapTableSpider(scrapy.Spider):
 			'S.N' : row.xpath('td[1]//text()').extract_first(),
 			'Contract No': row.xpath('td[2]//text()').extract_first(),
 			'Stock Symbol' : row.xpath('td[3]//text()').extract_first(),
-					'Buyer Broker' : row.xpath('td[4]//text()').extract_first(),
-					'Seller Broker' : row.xpath('td[5]//text()').extract_first(),
-					'Quantity' : row.xpath('td[6]//text()').extract_first(),
-					'Rate' : row.xpath('td[7]//text()').extract_first(),
-					'Amount' : row.xpath('td[8]//text()').extract_first(),
+			'Buyer Broker' : row.xpath('td[4]//text()').extract_first(),
+			'Seller Broker' : row.xpath('td[5]//text()').extract_first(),
+			'Quantity' : row.xpath('td[6]//text()').extract_first(),
+			'Rate' : row.xpath('td[7]//text()').extract_first(),
+			'Amount' : row.xpath('td[8]//text()').extract_first(),
 		    }
  
