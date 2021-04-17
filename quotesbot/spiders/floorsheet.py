@@ -7,7 +7,7 @@ class BootstrapTableSpider(scrapy.Spider):
  
     def start_requests(self):
         urls = [
-           # "http://nepalstock.com/main/floorsheet/index/1/?contract-no=&stock-symbol=&buyer=&seller=&_limit=20000"
+                        # "http://nepalstock.com/main/floorsheet/index/1/?contract-no=&stock-symbol=&buyer=&seller=&_limit=20000"
 			#"http://www.nepalstock.com.np/floorsheet?contract-no=&stock-symbol=&buyer=&seller=&_limit=20000"
 			#"http://nepalstock.com/main/floorsheet/index/1/contract-no/asc/?contract-no=&stock-symbol=&buyer=&seller=&_limit=50000"
 			#"http://nepalstock.com.np/main/floorsheet/index/1/?contract-no=&stock-symbol=&buyer=&seller=&_limit=30000" 
@@ -33,16 +33,16 @@ class BootstrapTableSpider(scrapy.Spider):
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
  
-def parse(self, response):
-        for row in response.xpath('//*[@class="table my-table"]//tr'):
-            yield {
-                'S.N' : row.xpath('td[1]//text()').extract_first(),
-                'Contract No': row.xpath('td[2]//text()').extract_first(),
-                'Stock Symbol' : row.xpath('td[3]//text()').extract_first(),
-				'Buyer Broker' : row.xpath('td[4]//text()').extract_first(),
-				'Seller Broker' : row.xpath('td[5]//text()').extract_first(),
-				'Quantity' : row.xpath('td[6]//text()').extract_first(),
-				'Rate' : row.xpath('td[7]//text()').extract_first(),
-				'Amount' : row.xpath('td[8]//text()').extract_first(),
-            }
+	def parse(self, response):
+		for row in response.xpath('//*[@class="table my-table"]//tr'):
+		    yield {
+			'S.N' : row.xpath('td[1]//text()').extract_first(),
+			'Contract No': row.xpath('td[2]//text()').extract_first(),
+			'Stock Symbol' : row.xpath('td[3]//text()').extract_first(),
+					'Buyer Broker' : row.xpath('td[4]//text()').extract_first(),
+					'Seller Broker' : row.xpath('td[5]//text()').extract_first(),
+					'Quantity' : row.xpath('td[6]//text()').extract_first(),
+					'Rate' : row.xpath('td[7]//text()').extract_first(),
+					'Amount' : row.xpath('td[8]//text()').extract_first(),
+		    }
  
