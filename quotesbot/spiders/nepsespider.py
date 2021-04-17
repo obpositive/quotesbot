@@ -1,23 +1,5 @@
 
 
-
-Skip to content
-Using Gmail with screen readers
-in:draft 
-Error checking mail for khvi1039@hj.se.  
-Details
-  
-Dismiss
-Meet
-New meeting
-Join a meeting
-Hangouts
-
-Conversations
-8.6 GB of 15 GB used
-Terms · Privacy · Program Policies
-Last account activity: 48 minutes ago
-Details
 import scrapy
  
 class BootstrapTableSpider(scrapy.Spider):
@@ -80,5 +62,4 @@ class BootstrapTableSpider(scrapy.Spider):
 			
 			
 # $ scrapy crawl --nolog -o - -t json floorsheet_table
-floorsheet_spider.py
-Displaying floorsheet_spider.py.
+
