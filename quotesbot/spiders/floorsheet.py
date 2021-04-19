@@ -23,8 +23,8 @@ class BootstrapTableSpider(scrapy.Spider):
             "http://nepalstock.com/main/floorsheet/index/6/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000",
             "http://nepalstock.com/main/floorsheet/index/7/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000",
             "http://nepalstock.com/main/floorsheet/index/8/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000",
-            "http://nepalstock.com/main/floorsheet/index/9/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000",
-            "http://nepalstock.com/main/floorsheet/index/10/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000"
+            #"http://nepalstock.com/main/floorsheet/index/9/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000",
+            #"http://nepalstock.com/main/floorsheet/index/10/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000"
 
         ]
         for url in urls:
