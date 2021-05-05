@@ -10,11 +10,11 @@ class AutoScrapper(scrapy.Spider):
 
     def start_requests(self):
         urls = []
-        index_count= 1
-        i = 1
-        while i <= index_count:
-            urls.append("http://nepalstock.com/main/floorsheet/index/{index_count}/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000")
-            i += 1
+        page_index_max = 8
+        page = 1
+        while page <= page_index_max:
+            urls.append("http://nepalstock.com/main/floorsheet/index/{page}/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000")
+            page += 1
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
 
