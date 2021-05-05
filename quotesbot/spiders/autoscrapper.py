@@ -6,9 +6,10 @@ class AutoScrapper(scrapy.Spider):
 
     # urls =[ "http://http://118.91.175.170/main/floorsheet",]
     
-    urls = []
+    
 
     def start_requests(self):
+        urls = []
         index_count= 1
         i = 1
         while i <= index_count:
