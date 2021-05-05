@@ -3,11 +3,7 @@ import scrapy
 
 class AutoScrapper(scrapy.Spider):
     name = "autoscrapper"
-
-    # urls =[ "http://http://118.91.175.170/main/floorsheet",]
-    
-    
-
+      
     def start_requests(self):
         urls = []
         page_index_max = 9
@@ -29,5 +25,5 @@ class AutoScrapper(scrapy.Spider):
                 'Seller Broker': row.xpath('td[5]//text()').extract_first(),
                 'Quantity': row.xpath('td[6]//text()').extract_first(),
                 'Rate': row.xpath('td[7]//text()').extract_first(),
-                'Amount': row.xpath('td[8]//text()').extract_first(),
+                'Amount': row.xpath('td[8]//text()').extract_first()
             }
