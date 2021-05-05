@@ -5,7 +5,7 @@ class AutoScrapper(scrapy.Spider):
     name = "autoscrapper"
 
     # urls =[ "http://http://118.91.175.170/main/floorsheet",]
-    index_count = 7
+    index_count = 8
     urls = []
 
     def start_requests(self):
