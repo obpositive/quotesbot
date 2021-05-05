@@ -5,10 +5,11 @@ class AutoScrapper(scrapy.Spider):
     name = "autoscrapper"
 
     # urls =[ "http://http://118.91.175.170/main/floorsheet",]
-    index_count = 8
+    
     urls = []
 
     def start_requests(self):
+        index_count= 1
         i = 1
         while i <= index_count:
             urls.append("http://nepalstock.com/main/floorsheet/index/{index_count}/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000")
