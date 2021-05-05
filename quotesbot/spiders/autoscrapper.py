@@ -9,7 +9,7 @@ class AutoScrapper(scrapy.Spider):
         page_index_max = 9
         page = 1
         while page < page_index_max:
-            urls.append("http://nepalstock.com/main/floorsheet/index/{page}/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000")
+            urls.append(f"http://nepalstock.com/main/floorsheet/index/{page}/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000")
             page += 1
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
