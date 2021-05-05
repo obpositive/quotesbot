@@ -1,7 +1,7 @@
 import scrapy
 
 
-class BootstrapTableSpider(scrapy.Spider):
+class AutoScrapper(scrapy.Spider):
     name = "auto_scrapper"
 
     # urls =[ "http://http://118.91.175.170/main/floorsheet",]
