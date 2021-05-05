@@ -9,9 +9,9 @@ class BootstrapTableSpider(scrapy.Spider):
     urls = []
 
     def start_requests(self):
-       while( i = index_count)
+       while( i <= index_count)
         urls.append("http://nepalstock.com/main/floorsheet/index/{index_count}/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000")
-        i = i+1
+        i += 1
        for url in urls:
            yield scrapy.Request(url=url, callback=self.parse)
 
