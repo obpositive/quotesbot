@@ -6,7 +6,7 @@ class AutoScrapper(scrapy.Spider):
       
     def start_requests(self):
         urls = []
-        page_index_max = 10
+        page_index_max = 13
         page = 1
         while page < page_index_max:
             urls.append(f"http://nepalstock.com/main/floorsheet/index/{page}/?contract-no=&stock-symbol=&buyer=&seller=&_limit=10000")
